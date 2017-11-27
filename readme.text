@@ -1,3 +1,10 @@
+eureka sample configuration in spring boot.
+
+1.this project contain dicovery server , service and , client sample 
+
+2.discovery server clustering also included 
+
+3.following issues also addressed . 
 https://github.com/spring-cloud/spring-cloud-netflix/issues/838
 
 https://stackoverflow.com/questions/33921557/understanding-spring-cloud-eureka-server-self-preservation-and-renew-threshold
