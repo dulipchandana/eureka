@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.web.ribbon.config.ribbontimeapp.RibbonTimeConfig;
+
 @SpringBootApplication
 @RestController
 //@EnableDiscoveryClient
 //run without eureka only load balansing 
-@RibbonClient(name = "time-service")
+@RibbonClient(name = "time-service" , configuration=RibbonTimeConfig.class)
 public class RibbonTimeAppApplication {
 
 	@Inject
