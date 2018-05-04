@@ -47,5 +47,19 @@ Group = io.eureka.com
 Artifact=discovery-server
 Dependencies= Eureka Server,DevTools,Actuator
 
+@EnableEurekaServer //eureka server 
+@SpringBootApplication
+public class DiscoveryServerApplication {
+
+#in application.property
+
+spring.application.name=discovery-server
+eureka.client.register-with-eureka=false // register in 
+eureka.client.fetchch-registry = false // indicates weather this client should fetch eureka registry information from eureka server.
+server.port = 8761
+
+
+
+
 
 
