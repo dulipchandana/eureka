@@ -8,3 +8,44 @@ eureka sample configuration in spring boot.
 https://github.com/spring-cloud/spring-cloud-netflix/issues/838
 
 https://stackoverflow.com/questions/33921557/understanding-spring-cloud-eureka-server-self-preservation-and-renew-threshold
+
+--make a spring boot application with start.spring.io
+
+http://start.spring.io/
+
+group:package name
+Artifact : service
+dependancies : Eureka Discovery
+
+#enable discovery client 
+@EnableDiscoveryClient //enable Discovery client
+@SpringBootApplication
+@RestControler
+public class ServiceApplication{
+
+#access run argument from application
+
+@Value("${service.instance.name}")
+private String instance;
+
+#application.property changes
+
+spring.application.name=service //application name 
+eureka.client.service-erldefaultZone=http://localhost:8761/eureka //euraca location 
+
+
+#give argument in spring boot startup in Override properties
+
+server.port=8081
+service.instance.name=instance1
+
+
+#--eureka server configuration and initialisation with spring cloud ---
+
+http://start.spring.io/
+Group = io.eureka.com
+Artifact=discovery-server
+Dependencies= Eureka Server,DevTools,Actuator
+
+
+
